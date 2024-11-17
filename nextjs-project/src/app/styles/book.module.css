@@ -1,0 +1,8 @@
+.book {
+    padding: 15px 30px;
+    background-color: rgba(199, 199, 199, 0.353);
+    border-radius: 20px;
+}
+.book:hover {
+    background-color: #5b5b5b6d;
+}
