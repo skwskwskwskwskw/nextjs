@@ -1,3 +1,4 @@
+import { API_URL2 } from "@/constants";
 import styles from "../styles/detail.module.css";
 
 interface IParams {
@@ -11,10 +12,9 @@ export async function generateMetadata({
         title: movie.title,
     };
 }
-export const API_URL = "https://books-api.nomadcoders.workers.dev/list?name=";
 
 export async function getBooks(list_name_encoded: string) {
-    const response = await fetch(`${API_URL}${list_name_encoded}`);
+    const response = await fetch(`${API_URL2}${list_name_encoded}`);
     const json = await response.json();
     return json.results;
 }

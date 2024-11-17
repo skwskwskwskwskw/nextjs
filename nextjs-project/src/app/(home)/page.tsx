@@ -1,11 +1,10 @@
+import { API_URL } from "@/constants";
 import Book from "../components/book-list";
 import styles from "../styles/home.module.css";
 
 export const metadata = {
     title: "Home",
 };
-
-export const API_URL = "https://books-api.nomadcoders.workers.dev/lists";
 
 async function getBooks() {
     // await new Promise((resolve) => setTimeout(resolve, 1000));

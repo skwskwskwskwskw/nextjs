@@ -5,6 +5,8 @@ interface IParams {
     params: { list_name_encoded: string };
 }
 
+type Params = Promise<{ list_name_encoded: string }>;
+
 export async function generateMetadata({
     params: { list_name_encoded },
 }: IParams) {
