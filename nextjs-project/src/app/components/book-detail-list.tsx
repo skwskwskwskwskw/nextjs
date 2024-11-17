@@ -32,14 +32,13 @@ export default async function BookDetail({
     list_name_encoded: string;
 }) {
     const books: IBookResult = await getBooks(list_name_encoded);
-    const onClickBuyBtn = () => {};
     return (
         <div className={styles.container}>
             <h1>{books.display_name}</h1>
             <div className={styles.book_list_container}>
                 {books?.books.map((book) => {
                     return (
-                        <div className={styles.book_list}>
+                        <div key={book.title} className={styles.book_list}>
                             <img src={book.book_image} alt={book.title} />
                             <div className={styles.book_info}>
                                 <p>{book.title}</p>
