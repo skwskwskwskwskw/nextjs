@@ -1,12 +1,9 @@
 import BookDetail, { getBooks } from "@/app/components/book-detail-list";
 import { Suspense } from "react";
 
-// interface IParams {
-//     params: { list_name_encoded: string };
-// }
-type Params = Promise<{ list_name_encoded: string }>;
+type IParams = Promise<{ list_name_encoded: string }>;
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata({ params }: { params: IParams }) {
     const { list_name_encoded } = await params;
     const book = await getBooks(list_name_encoded);
     return {
@@ -14,7 +11,7 @@ export async function generateMetadata({ params }: { params: Params }) {
     };
 }
 
-export default async function MovieDetailPage({ params }: { params: Params }) {
+export default async function MovieDetailPage({ params }: { params: IParams }) {
     const { list_name_encoded } = await params;
     return (
         <div>
